@@ -1,37 +1,41 @@
-# Local RAG Agent Pipeline
+# Local Agentic RAG Pipeline
 
-End-to-end **Retrieval-Augmented Generation (RAG)** system built from scratch, running fully locally.
+**100% offline Retrieval-Augmented Generation system** — built from scratch with Ollama, FAISS, and Streamlit.  
+Chat with your PDFs/documents using a local LLM + hybrid retrieval + basic agentic retry.
 
-## Features
-- PDF ingestion & intelligent chunking
-- FAISS vector database + **hybrid retrieval** (dense semantic + BM25 keyword)
-- Reranking with FlashRank/CrossEncoder
-- Query rewriting + HyDE for short/vague questions
-- Semantic caching (significant LLM call savings)
-- Basic router (retrieve / no-retrieve decision)
-- Offline evaluation with **RAGAS** (faithfulness, relevancy, precision, recall)
-- Simple agentic retry loop (self-check & re-retrieve)
+<p align="center">
+  <img src="assets/Agentic_RAG(Local).jpg" alt="Agentic RAG Pipeline Flowchart" width="80%">
+  <br><em>High-level workflow: query understanding → hybrid retrieval → reranking → generation → self-check retry</em>
+</p>
 
-## Tech Stack
-- Embeddings: `all-MiniLM-L6-v2`
-- LLM: Llama-3.1-8B-Instruct (via Ollama, Q5_K_M quantization)
-- Vector DB: FAISS
-- Reranking: FlashRank / CrossEncoder
-- Evaluation: RAGAS
-- UI: Streamlit (in progress)
+## ✨ Current Features (Early Stage)
 
-## Quick Start
-1. Clone repo
+- PDF/text ingestion + chunking
+- Embeddings via `all-MiniLM-L6-v2` (or Ollama nomic-embed)
+- **Hybrid search** — semantic (FAISS) + keyword (BM25 planned)
+- Local LLM generation with **Llama-3.1-8B-Instruct** (via Ollama)
+- Basic Streamlit chat UI
+- In-progress: reranking, query rewrite/HyDE, semantic cache, RAGAS eval, agentic loop
+
+## 🛠 Tech Stack
+
+- **LLM** → Ollama + Llama 3.1 8B (Q5_K_M or similar)
+- **Embeddings** → sentence-transformers / Ollama
+- **Vector DB** → FAISS
+- **UI** → Streamlit
+- **Others** → LangChain / LlamaIndex? (check your pipeline), rank_bm25, ragas (planned)
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Ollama-Local%20LLM-green?style=for-the-badge&logo=ollama" alt="Ollama">
+  <img src="https://img.shields.io/badge/FAISS-Vector%20DB-orange?style=for-the-badge" alt="FAISS">
+  <img src="https://img.shields.io/badge/Streamlit-UI-FF4B4B?style=for-the-badge&logo=streamlit" alt="Streamlit">
+  <img src="https://img.shields.io/badge/Offline-100%25-success?style=for-the-badge" alt="Fully Offline">
+</p>
+
+## 🚀 Quick Start
+
+1. Clone the repo
    ```bash
-   git clone https://github.com/DanielJosephSahayaraj/Local-Agentic-RAG-System_Evaluation-Driven_Built-with-FAISS-Ollama-RAGAS
-   cd YOUR_REPO
-
-## Demo
-<image-card alt="RAG Chat UI" src="screenshot.png" ></image-card>
-<image-card alt="RAG Terminal" src="screenshot1.png" ></image-card>
-
-## Pipeline Flowchart
-
-<image-card alt="RAG Agent Pipeline Flowchart" src="Agentic_RAG(Local).jpg" ></image-card>
-
-High-level overview of the query → retrieval → generation → retry loop.
+   git clone https://github.com/YOUR-USERNAME/YOUR-REPO-NAME.git
+   cd YOUR-REPO-NAME
