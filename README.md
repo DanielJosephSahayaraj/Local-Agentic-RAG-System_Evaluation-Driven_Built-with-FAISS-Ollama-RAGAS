@@ -37,5 +37,5 @@ Chat with your PDFs/documents using a local LLM + hybrid retrieval + basic agent
 
 1. Clone the repo
    ```bash
-   git clone https://github.com/YOUR-USERNAME/YOUR-REPO-NAME.git
-   cd YOUR-REPO-NAME
+   git clone https://github.com/DanielJosephSahayaraj/Local-Agentic-RAG-System_Evaluation-Driven_Built-with-FAISS-Ollama-RAGAS.git
+   cd Local-Agentic-RAG-System_Evaluation-Driven_Built-with-FAISS-Ollama-RAGAS
