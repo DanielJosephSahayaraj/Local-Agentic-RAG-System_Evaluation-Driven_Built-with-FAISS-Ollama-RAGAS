@@ -44,6 +44,6 @@ Tested on 10 questions (mix of relevant & off-topic).
 | Context Precision   | 0.82  | Retrieved chunks mostly relevant |
 
 
-Off-topic queries (e.g. "capital of India") correctly refused with "I don't know".
+Off-topic queries (e.g. "capital of England") correctly refused with "I don't know".
 
 Scores measured offline with RAGAS using Llama-3.1-8B as judge.
